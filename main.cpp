@@ -41,25 +41,25 @@ int main() {
     for(int i = 0; i < (tests.size()); i++) {
         std::pair<int, int> bRes = twoSumBruteForce(tests[i], tars[i]);
         std::pair<int, int> hRes = twoSumHash(tests[i], tars[i]);
-        std::cout<< "test case " << i + 1 << "\n";
+        std::cout<< "test case " << i + 1;
         if(bRes.first == -1 or hRes.first == -1){
-            std::cout<< "no solution exists\n\n";
+            std::cout<< "\nno solution exists\n\n";
         }
         else{
             if(tests[i][bRes.first] + tests[i][bRes.second] == tars[i]){
-                bValid = "= " + std::to_string(tars[i]) + "? valid";
+                bValid = "\n= " + std::to_string(tars[i]) + "? valid\n";
             }
             else{
-                bValid = "= " + std::to_string(tars[i]) + "? invalid";
+                bValid = "\n= " + std::to_string(tars[i]) + "? invalid\n";
             }
 
             if(tests[i][hRes.first] + tests[i][hRes.second] == tars[i]){
-                hValid = "= " + std::to_string(tars[i]) + "? valid";
+                hValid = "\n= " + std::to_string(tars[i]) + "? valid\n";
             }
             else{
-                hValid = "= " + std::to_string(tars[i]) + "? invalid";
+                hValid = "\n= " + std::to_string(tars[i]) + "? invalid\n";
             }
-            std::cout<< "bruteforce\n[" << bRes.first << ", " << bRes.second << "]\n" << tests[i][bRes.first] << ", " << tests[i][bRes.second] << "\n" << bValid << "\nhashmap\n[" << hRes.first << ", " << hRes.second << "]\n" << tests[i][hRes.first] << ", " << tests[i][hRes.second] << "\n" << hValid;
+            std::cout<< "\nbruteforce\n[" << bRes.first << ", " << bRes.second << "]\n" << tests[i][bRes.first] << ", " << tests[i][bRes.second] << bValid << "hashmap\n[" << hRes.first << ", " << hRes.second << "]\n" << tests[i][hRes.first] << ", " << tests[i][hRes.second] << hValid << "\n";
         }
     }
 }
